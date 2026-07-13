@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Alimentação</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h1>
+        Registrar Alimentação diária
+    </h1>
+    </form>
+     <!-- O formulário que empacota os dados e envia (POST) para a rota certa -->
+      <form action="/registrar-racao" method="POST">
+        <label> Qual Tanque </label>
+        <!-- O atributo 'name' é a etiqueta da caixa. O Node só entende isso!-->
+        <input type "text" name="tanque" placeholder="Ex:Tanque 1">
+        <br><br>
+
+        <label> Quantidade de Ração (Kg):</label>
+        <input type "number" name="quantidade" placeholder="Ex: 5">
+        <button type"submit">Salvar Ração</button>
+    </form>   
+</body>
+</html>
