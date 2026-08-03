@@ -2,4 +2,3 @@ node_modules
 fazenda.db
 .DS_Store
 .env
-*~
