@@ -1,0 +1,139 @@
+/* Paleta de cores voltada para água e piscicultura */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: #f0f8ff; /* Azul bem claro (cor de água limpa) */
+    color: #1a365d; /* Azul marinho escuro para os textos */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+h1 {
+    color: #0b4f6c; /* Azul oceano profundo */
+    margin-bottom: 30px;
+    border-bottom: 3px solid #01baef; /* Detalhe em azul turquesa */
+    padding-bottom: 10px;
+}
+
+/* Container do formulário para parecer um cartão flutuante */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    background-color: #ffffff; /* Fundo branco para contraste */
+    padding: 30px;
+    border-radius: 15px; /* Bordas arredondadas e fluidas */
+    box-shadow: 0 8px 24px rgba(11, 79, 108, 0.12); /* Sombra suave azulada */
+    gap: 15px;
+    border-top: 5px solid #20b2aa; /* Detalhe superior em verde-água (SeaGreen) */
+}
+
+/* Estilização dos textos informativos (Labels) */
+label {
+    text-align: left;
+    font-weight: 600;
+    color: #0b4f6c;
+    font-size: 14px;
+}
+
+/* Campos de entrada de dados */
+input {
+    padding: 12px;
+    border: 2px solid #b0e0e6; /* Borda azul bebê */
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    transition: all 0.3s ease; /* Efeito suave ao clicar */
+}
+
+/* Efeito quando o usuário clica para digitar no input */
+input:focus {
+    border-color: #01baef; /* Borda brilha em turquesa */
+    box-shadow: 0 0 8px rgba(1, 186, 239, 0.3);
+}
+
+/* Botão de envio estilizado */
+button {
+    padding: 14px;
+    background-color: #0b4f6c; /* Azul piscicultura */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Efeito ao passar o mouse no botão */
+button:hover {
+    background-color: #20b2aa; /* Muda para verde-água */
+}
+
+/* Efeito ao clicar no botão */
+button:active {
+    transform: scale(0.98); /* Dá um leve efeito de clique físico */
+}
+
+/* Configuração do Grid para alinhar os cards lado a lado */
+.grid-tanques {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 20px;
+}
+
+/* Estilo do Card que simula o tanque de peixe */
+.card-tanque {
+    background-color: #ffffff;
+    border-left: 6px solid #01baef; /* Detalhe azul na lateral */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(11, 79, 108, 0.08);
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.card-tanque:hover {
+    transform: translateY(-5px); /* Dá a impressão que o card flutua ao passar o mouse */
+    border-left-color: #20b2aa; /* Muda a cor da lateral para verde-água */
+}
+
+.card-tanque h3 {
+    margin: 0 0 10px 0;
+    color: #0b4f6c;
+}
+
+.card-tanque p {
+    margin: 5px 0;
+    color: #4a5568;
+}
+
+.card-tanque small {
+    color: #a0aec0;
+    font-size: 11px;
+}
+
+/* Estilo do link de voltar */
+.btn-voltar {
+    display: inline-block;
+    margin-top: 20px;
+    color: #0b4f6c;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-voltar:hover {
+    color: #20b2aa;
+    text-decoration: underline;
+}
+
