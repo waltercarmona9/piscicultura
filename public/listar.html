@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tanques</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Tanques de Piscicultura Ativos</h1>
+
+    <!-- Os cards dos tanques serão gerados automaticamente dentro desta div -->
+    <div id="container-tanques" class="grid-tanques">
+        <p>Carregando tanques...</p>
+    </div>
+
+    <br>
+    <a href="index.html" class="btn-voltar">← Cadastrar Novo Tanque</a>
+
+    <!-- Script que busca os dados do servidor e monta a tela -->
+    <script>
+        async function carregarTanques() {
+            try {
+                // Busca os dados da rota do server.js
+                const resposta = await fetch('/listar-tanques');
+                const tanques = await resposta.json();
+                
+                const container = document.getElementById('container-tanques');
+                container.innerHTML = ''; // Limpa o texto de carregamento
+
+                if (tanques.length === 0) {
+                    container.innerHTML = '<p>Nenhum tanque cadastrado no momento.</p>';
+                    return;
+                }
+
+                // Cria um card visual para cada tanque do banco de dados
+                tanques.forEach(tanque => {
+                    const card = document.createElement('div');
+                    card.className = 'card-tanque';
+                    card.innerHTML = `
+                        <h3>🐟 ${tanque.nome}</h3>
+                        <p><strong>Espécie:</strong> ${tanque.peixe}</p>
+                        <small>ID do Registro: #${tanque.id}</small>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (erro) {
+                console.error("Erro ao buscar tanques:", erro);
+                document.getElementById('container-tanques').innerHTML = '<p>Erro ao carregar os dados.</p>';
+            }
+        }
+
+        // Executa a função assim que a página abre
+        carregarTanques();
+    </script>
+</body>
+</html>

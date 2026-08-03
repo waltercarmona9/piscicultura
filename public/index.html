@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Piscicultura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Sistema de Piscicultura</h1>
+
+    <!-- O action e o method agora casam perfeitamente com o server.js -->
+    <form action="/salvar-tanque" method="POST">
+        <input type="text" name="nomeTanque" placeholder="Nome do Tanque" required>
+        <input type="text" name="especiePeixe" placeholder="Qual peixe?" required>
+        <button type="submit">Cadastrar</button>
+    </form>   
+
+</body>
+</html>
